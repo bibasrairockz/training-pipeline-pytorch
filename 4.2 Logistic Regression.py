@@ -4,6 +4,7 @@ import numpy as np
 from sklearn import datasets
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
+import matplotlib.pyplot as plt
 
 bc= datasets.load_breast_cancer()
 X, Y= bc.data, bc.target
@@ -27,6 +28,7 @@ learning_rate= 0.01
 n_iters= 100
 loss= nn.BCELoss()
 optimizer= torch.optim.SGD(model.parameters(), lr= learning_rate)
+J= []
 
 def train():
     for epoch in range(n_iters):
@@ -34,6 +36,7 @@ def train():
 
         l= loss(Y_pred, Y_train)
         l.backward()
+        J.append(l.item())
 
         optimizer.step()
         optimizer.zero_grad()
@@ -47,8 +50,13 @@ def accuracy():
     acc= Y_pred_cls.eq(Y_test).sum() / float(Y_test.shape[0])
     print(f"Accuracy= {acc}")
 
+def plots():
+    plt.plot(np.arange(n_iters), J, 'b')
+    plt.show()
+
 if __name__=="__main__":
     train()
 
     accuracy()
 
+    plots()
