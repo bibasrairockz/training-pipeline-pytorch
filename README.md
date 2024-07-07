@@ -9,4 +9,5 @@
 4.2  
 ![Figu343re_1](https://github.com/bibasrairockz/training-pipeline-pytorch/assets/130794180/bc2df86c-6c3c-417f-8e1a-184147a17334)
 
-
+4.1.2  
+![qwqwq](https://github.com/bibasrairockz/training-pipeline-pytorch/assets/130794180/e7f09ed4-a1a3-4373-b1fb-49b494ef317d)  
